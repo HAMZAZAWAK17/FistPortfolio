@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thanks</title>
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+    * {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        scroll-padding-top: 2rem;
+    }
+
+    :root {
+        --main-color: #000000;
+        --body-color: #0d0f26;
+        --container-color: #DA0037;
+        --heading-color: #8CABFF;
+        --box-color: #0d0f26;
+        --bg-color: #fff;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #000000, #DA0037, #fff);
+    }
+
+    .card {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+   
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: #FB2576;
+  color: #000000;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border: 10px solid #000000;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000000;
+  color: #DA0037;
+  display: flex;
+  align-items: center;
+  border: 10px solid #DA0037;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+
+    .social {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        margin-left: 60px;
+        flex-direction:row;
+        column-gap: 0.5rem;
+    }
+
+    .social .bx {
+        font-size: 1.3rem;
+        padding: 15px;
+        border-radius: 50%;
+        color: var(--container-color);
+        background: var(--main-color);
+    }
+
+    .social .bx:hover {
+        background: var(--bg-color);
+        transition: 0.3s all linear;
+    }
+
+    .back-button {
+        background: var(--main-color);
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 10px;
+        font-size: 16px;
+        margin-top: 20px;
+        transition: background 0.3s;
+    }
+
+    .back-button:hover {
+        background: var(--container-color);
+    }
+</style>
+<body>
+    <div class="content">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <p>Thanks for contacting us</p>
+                </div>
+                <div class="card-back">
+                    <a class="back-button" href="/htmlcss/pp.html"><b>Back to the main page</b></a>
+                </div>
+            </div>
+        </div>
+        <div class="social">
+            <a href="https://web.facebook.com/profile.php?id=100062345559865"><i class='bx bxl-facebook'></i></a>
+            <a href="https://www.instagram.com/zawa9__17/"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-linkedin'></i></a>
+        </div>
+    </div>
+</body>
+</html>

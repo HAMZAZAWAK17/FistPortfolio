@@ -1,0 +1,758 @@
+/* google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+
+/* variables */
+
+:root{
+    --main-color:#000000;
+    --body-color:#0d0f26;
+    --container-color:#DA0037;
+    --heading-color:#8CABFF;
+    --box-color:#0d0f26;
+    --bg-color:#fff;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color: var(--bg-color);
+    background: var(--body-color);
+    padding-top: 0;
+    scrollbar-width: thin; /* Cache la barre de défilement sur Firefox */
+    scrollbar-color: transparent transparent; /* Cache la barre de défilement sur Firefox */
+    overflow: overlay; /* Cache la barre de défilement sur WebKit (Chrome, Safari) */
+}
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+img{
+    width: 100%;
+}
+
+section{
+    padding:3rem 0 2rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.container{
+    max-width: 960px;
+    margin: auto;
+    width: 100%;
+}
+
+
+/* Styles pour le bouton de retour en haut */
+.scroll-to-top-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--container-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+}
+
+.scroll-to-top-button:hover {
+    color: var(--container-color);
+    background-color: var(--bg-color);
+}
+
+
+
+/* header */
+header {
+    background:var(--container-color);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    border: solid 4px var(--bg-color);
+}
+header .logo {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: var(--bg-color);
+}
+
+header .logo a.logos {
+    color: white;
+    font-size: 25px;
+}
+
+header nav ul {
+    display: flex;
+}
+header nav ul li a {
+    display: inline-block;
+    color: #000;
+    padding: 5px 0;
+    margin: 0 10px;
+    border: 3px solid transparent;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    background-color: var(--bg-color);
+    color: var(--container-color);
+    border-radius:  50%;
+}
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #ffffff;
+}
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 30px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: var(--container-color);
+        padding: 30px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+#nav_check:checked + header .nav ul {
+    left: 0;
+}
+
+#nav_check:checked + header .nav ul + .logo {
+    top: 70px;
+}
+
+
+/* Styles pour le thème clair */
+.light-theme {
+    background-color: #777777;
+    color: #000;
+}
+
+/* Styles pour le thème sombre */
+.dark-theme {
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+
+
+/* home */
+.home{
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 50px;
+}
+
+.home-content{
+    position: relative;
+    max-width:600px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-img {
+    width: 180px;
+    height: 180px;
+    border: solid 4px var(--bg-color); /* Ajoutez une épaisseur à la bordure */
+    border-radius: 50%;
+    background: var(--container-color);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: border-color 0.3s, background-color 0.3s; /* Ajoutez une transition en douceur pour l'effet hover */
+}
+
+.home-img:hover {
+    border-color: var(--container-color); /* Changez la couleur de la bordure au survol */
+    background: var(--bg-color); /* Changez la couleur de l'arrière-plan au survol */
+}
+
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.home-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-text h3{
+    position:relative;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--bg-color);
+}
+
+.home-text h3::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    left: -30%;
+    width: 20px;
+    height: 2px;
+    background: var(--bg-color);
+}
+
+.home-text h3::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    right: -35px;
+    width: 20px;
+    height: 2px;
+    background: var(--bg-color);
+}
+
+.home-text h2{
+    font-size: 3rem;
+    line-height: 4.8rem;
+    color: var(--bg-color);
+}
+
+.home-text p{
+    font-size: 0.938rem;
+    margin-bottom: 1.5rem;
+    margin-top: 20px;
+    color: var(--bg-color);
+}
+
+.home-text .color{
+    color: var(--container-color);
+}
+
+
+/* Ajoutez ces styles à la fin de votre fichier CSS pour gérer l'affichage sur les téléphones */
+@media (max-width: 768px) {
+    .home {
+        margin-top: 300px; /* Ajustez la valeur en fonction de la hauteur de votre barre de navigation */
+    }
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.social .bx{
+    font-size: 1.3rem;
+    padding: 15px;
+    border-radius: 50%;
+    color: var(--container-color);
+    background: var(--main-color);
+}
+
+.social .bx:hover{
+    background: var(--bg-color);
+    transition: 0.3s all linear;
+}
+
+/* heading */
+.heading{
+    font-size:5rem;
+    text-transform: uppercase;
+    color: var(--container-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    
+}
+
+.about-content{
+    color: var(--bg-color);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1,5rem;
+    margin: 20px;
+}
+
+.about-data span{
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--container-color);
+}
+
+
+.about-data h2{
+    font-size: 2rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.btn{
+    font-size:0.97rem;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    color: var(--bg-color);
+    background: var(--container-color);
+    padding: 12px 16px;
+    border-radius: 0.4rem;
+    margin-top: 1rem;
+}
+
+.btn .bx{
+    font-size: 1.2rem;
+}
+
+.btn:hover{
+    color: var(--container-color);
+    background: var(--bg-color);
+    transition: 0.3s all linear;
+}
+
+.about-text{
+    font-size: 0.938rem;
+    letter-spacing: 1px;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+/* services */
+
+.services-content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    color: var(--bg-color);
+}
+
+.services-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    margin: 40px;
+    background: var(--box-color);
+    border: 1px solid var(--container-color);
+    border-radius: 10px;
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.services-box:hover{
+    transform: scale(1.05);
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.services-box .bx{
+    font-size: 1.4rem;
+    color: var(--bg-color);
+    padding: 10px;
+    border-radius: 5rem;
+    border: 2px dashed var(--bg-color);
+}
+
+.services-box h2{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0.5rem 0;
+    color: var(--container-color);
+}
+
+.services-box .p{
+    font-size: 0.9rem;
+}
+
+/* portfolio */
+
+.portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2em;
+}
+
+.portfolio-box{
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border:solid 2px var(--container-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 40px;
+}
+
+.portfolio-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.portfolio-overlay{
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: hsla(343, 54%, 3%, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.portfolio-overlay:hover{
+    opacity: 1;
+}
+
+.portfolio-overlay h2{
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--bg-color);
+    margin: 20px;
+}
+
+.portfolio-overlay .bx{
+    font-size: 24px;
+    padding: 10px;
+    margin: 30px;
+    background: var(--container-color);
+    color: var(--body-color);
+    border: solid 2px var(--body-color);
+    border-radius: 4px;
+}
+
+.portfolio-overlay .bx:hover{
+    color: var(--container-color);
+    border: solid 2px var(--container-color);
+    background: var(--body-color);
+    transition: 0.3s all linear;
+}
+
+.portfolio-box:hover .portfolio-overlay{
+    top: 0;
+    transition: 0.3s all ease;
+}
+
+/* projects */
+
+.projects-content{
+    display: flex;
+    grid-template-columns: repeat(3,200px);
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.project-box{
+    flex: 1;
+    padding: 20px 10px;
+    margin: 20px;
+    background: var(--container-color);
+    border-radius: 0.4rem;
+    text-align: center;
+}
+
+.project-box h2{
+    font-size: 1.2rem;
+}
+
+.project-box span{
+    font-size: 0.845rem;
+}
+
+/* reviews */
+
+.reviews{
+    max-width: 750px;
+    margin: auto;
+    width: 100%;
+}
+
+
+.review-box{
+    max-width: 550px;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3.5rem !important;
+}
+
+.review-box .bx{
+    font-size: 2rem;
+    color: var(--container-color);
+}
+
+.review-box .review-text{
+    font-size: 0.89rem;
+    margin-bottom: 1rem;
+}
+
+.review-profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.review-profile h2{
+    font-size: 1.1rem;
+    line-height:1.3rem;
+    color: var(--container-color);
+}
+
+.review-profile span{
+    font-size: 0.84rem;
+    margin: 0.5rem 0 0.7rem;
+}
+
+.review-profile img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 4px;
+    border: 3px solid var(--container-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    object-position: center;
+}
+
+.swiper-pagination-bullet{
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 0.2rem !important;
+    background: var(--container-color);
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active{
+    width: 1.5rem !important;
+    background: var(--container-color) !important;
+}
+
+
+
+
+
+/* Ajoutez ces styles pour activer le défilement horizontal pour les critiques */
+/* Ajoutez ces styles pour activer le défilement horizontal pour les avis */
+.reviews-content {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+}
+
+.reviews-content .swiper-slide {
+    min-width: 100%; /* Ajustez la largeur de chaque critique */
+    flex-shrink: 0;
+    white-space: normal;
+    padding: 0 15px; /* Espace entre les critiques */
+    box-sizing: border-box;
+}
+
+/* Masquer les indicateurs de pagination */
+.swiper-pagination {
+    display: none;
+}
+
+/* remplir formulaire button */
+
+.send-btn {
+    --color: var(--container-color);
+    font-family: inherit;
+    display: block; /* Définissez le bouton comme un bloc pour centrer horizontalement */
+    width: 12em; /* Augmentez la largeur du bouton */
+    height: 3em; /* Augmentez la hauteur du bouton */
+    line-height: 3em;
+    margin: 20px auto; /* Marge automatique pour centrer verticalement et horizontalement */
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    color: var(--color);
+}
+
+.send-btn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.send-btn:hover {
+    color: #fff;
+}
+
+.send-btn:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+}
+
+.send-btn:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+.send-btn:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+}
+
+
+/* footer */
+
+.footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1.4rem;
+    padding: 30px 0;
+}
+
+.footer p{
+    font-size: 0.9rem;
+}
+
+.footer-links{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.footer-links a{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--container-color);
+}
+
+
+.footer-links a:hover{
+    color: var(--bg-color);
+    transition: 0.3s all linear;
+}
+
+.scroll-top{
+    position: fixed;
+    bottom: -100%;
+    right: 1.5rem;
+}
+
+.scroll-top .bx{
+    padding: 8px;
+    font-size: 1.3rem;
+    color: var(--body-color);
+    background: var(--container-color);
+    border-radius: 0.2rem;
+}
+
+.scroll-top .bx:hover{
+    color: var(--container-color);
+    background: var(--body-color);
+    transition: 0.3s;
+}
+
+.scroll-active{
+    bottom: 2rem;
+    transition: 0.3s;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .services-content {
+        grid-template-columns: repeat(1, 1fr); /* Affichez les services en une seule colonne sur les écrans plus petits */
+        margin: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-content {
+        flex-direction: column; /* Affichez les avis verticalement sur les écrans plus petits */
+        
+    }
+
+    .reviews-content .swiper-slide {
+        width: 100%; /* Assurez-vous que chaque critique occupe la largeur complète sur les écrans plus petits */
+    }
+}
+
